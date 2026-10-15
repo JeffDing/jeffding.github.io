@@ -3,8 +3,7 @@
 
 ### Introduction  
 
-OpenI首批资深体验官，Datawhale成员，MindSpore资深开发者，Ascend优秀开发者，主要探索学习国产算力、Mindspore、Ascend、AI For Science、AIGC
-
+Huawei Cloud Developer Group Contributors， MindSpore Senior Developer, Ascend Excellent Developer
 
 # Learning&Research
  1. Python  
