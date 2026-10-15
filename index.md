@@ -19,4 +19,4 @@ Huawei Cloud Developer Group Contributors， MindSpore Senior Developer, Ascend 
  
 
 # Connect Me 
-E-mail:JeffDing890430@gmail.com
+E-mail：JeffDing890430@gmail.com
