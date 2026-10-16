@@ -3,7 +3,7 @@
 
 ### Introduction  
 
-Datawhale Member, Huawei Cloud Developer Group Contributors，MindSpore Senior Developer, Ascend Excellent Developer
+Datawhale Contributors, Huawei Cloud Developer Group Contributors，MindSpore Senior Developer, Ascend Excellent Developer
 
 # Learning&Research
  1. Python  
