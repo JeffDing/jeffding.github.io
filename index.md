@@ -6,16 +6,14 @@
 Huawei Cloud Developer Group Contributors，Ascend Excellent Developer
 
 # Learning&Research
- 1. Python  
- 2. MindSpore  
- 3. Ascend  
- 4. CANN
- 5. Model Inference
- 6. Model Quantization
- 7. Model Fine-Tuning
- 8. AI Framework
- 9. AI Infra
- 10. Chinese Computing Chips
+ 1. Ascend
+ 2. CANN
+ 3. Model Inference
+ 4. Model Quantization
+ 5. Model Fine-Tuning
+ 6. AI Framework
+ 7. AI Infra
+ 8. Chinese Computing Chips
  
 
 # Connect Me 
