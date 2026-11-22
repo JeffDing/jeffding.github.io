@@ -1,0 +1,5 @@
+.serve.log
+.serve2.log
+__pycache__/
+*.pyc
+.DS_Store
