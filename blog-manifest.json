@@ -1,4 +1,12 @@
 {
-  "generatedAt": "2026-11-22T09:13:43",
-  "posts": []
+  "generatedAt": "2026-11-22T18:30:29",
+  "posts": [
+    {
+      "slug": "Ascend 950使用SGLANG部署模型",
+      "title": "Ascend 950使用SGLANG部署模型",
+      "date": "2026-11-22",
+      "summary": "Ascend 950使用SGLANG部署模型 环境配置 环境信息 Python：3.12 CANN版本：CANN9.1.0 Torch：2.10.0+cpu TorchNPU：2.10.0.post6 SGLang：0…",
+      "readingTime": 3
+    }
+  ]
 }

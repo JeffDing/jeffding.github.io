@@ -8,6 +8,7 @@
   var BLOG_DIR = "content/blog/";
   var MANIFEST_URL = "blog-manifest.json";
   var ABOUT_URL = "content/about.md";
+  var WORKS_URL = "content/works.md";
   var cache = { manifest: null };
 
   var $ = function (sel, root) {
@@ -278,6 +279,9 @@
           errorBox(listEl, "文章索引加载失败。");
         });
     }
+
+    var worksEl = $("#home-works");
+    if (worksEl) initWorks(worksEl);
   }
 
   function initBlog() {
@@ -400,6 +404,19 @@
     }
   }
 
+  function initWorks(el) {
+    var worksEl = el || $("#works-content");
+    if (!worksEl) return;
+    loadText(WORKS_URL)
+      .then(function (md) {
+        renderInto(worksEl, md);
+      })
+      .catch(function () {
+        worksEl.innerHTML =
+          '<p class="error-msg">找不到作品文件 <code>content/works.md</code>，创建一个 Markdown 文件即可自动显示在这里。</p>';
+      });
+  }
+
   /* ---------- boot ---------- */
 
   document.addEventListener("DOMContentLoaded", function () {
@@ -409,5 +426,6 @@
     if (page === "home") initHome();
     else if (page === "blog") initBlog();
     else if (page === "post") initPost();
+    else if (page === "works") initWorks();
   });
 })();
