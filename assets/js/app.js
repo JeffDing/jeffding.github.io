@@ -247,7 +247,7 @@
 
   function fillList(el, posts) {
     if (!posts.length) {
-      el.innerHTML = '<p class="list-empty">还没有文章。把 Markdown 文件放到 content/blog/ 下，再运行一次生成脚本即可。</p>';
+      el.innerHTML = '<p class="list-empty">暂无博客</p>';
       return;
     }
     el.innerHTML = posts.map(cardHtml).join("");
