@@ -14,14 +14,18 @@
 
 ### Ascend for PyTorch · 解耦
 
-[test/quantization/core/test_backend_config.py](https://github.com/pytorch/pytorch/pull/200236)
+- [test/quantization/core/test_backend_config.py](https://github.com/pytorch/pytorch/pull/200236)
 
 ### CANN 算子
 
-[aclblasCrotg_Ascend950PR](https://atomgit.com/cann/ops-blas/pull/400)
-
+- [aclblasCrotg_Ascend950PR](https://atomgit.com/cann/ops-blas/pull/400)
+- [aclblasCgemvBatched-Ascend950PR](https://atomgit.com/cann/ops-blas/pull/820)
 
 ## 项目与作品
 
-- [个人网站](https://jeffding.github.io) — 基于 Markdown 的静态个人主页。
-- [GitHub](https://github.com/JeffDing) — 代码、项目与更多记录。
+- [AscendC_Code](https://github.com/JeffDing/AscendC_Code)
+- [固定资产管理系统](https://github.com/JeffDing/fixed-asset-management)
+- [三维魔方](https://github.com/JeffDing/rubiks-cube)
+- [中国象棋](https://github.com/JeffDing/chinese-chess-game)
+- [斗兽棋](https://github.com/JeffDing/Animal_Chess)
+- [DingLab气象研究中心综合信息服务平台](https://jeffding.github.io/DingLab_TY/)
