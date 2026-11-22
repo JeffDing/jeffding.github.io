@@ -29,26 +29,6 @@
 - 《Dive into Deep Learning》
 - 《AI 系统原理与架构》
 
-## 开源贡献
-
-### Ascend For PyTorch · API 一致性开发
-
-- `torch.distributed.elastic.multiprocessing.errors.record`
-- `torch.distributed.elastic.multiprocessing.Std.from_str`
-- `torch.distributed.elastic.rendezvous.registry.get_rendezvous_handler`
-- `torch.distributed.fsdp.LocalOptimStateDictConfig`
-- `torch.distributed.fsdp.OptimStateDictConfig`
-- `torch.distributed.distributed_c10d._check_valid_timeout`
-- `torch.distributed.device_mesh._mesh_resources.mesh_stack.clear`
-
-### Ascend for PyTorch · 解耦
-
-[test/quantization/core/test_backend_config.py](https://github.com/pytorch/pytorch/pull/200236)
-
-### CANN 算子
-
-[aclblasCrotg_Ascend950PR](https://atomgit.com/cann/ops-blas/pull/400)
-
 ## 获奖情况
 
 - 第四届中国软件开源创新大赛 · 开源任务挑战赛：团体三等奖、个人三等奖
