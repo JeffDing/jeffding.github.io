@@ -1,4 +1,47 @@
 {
-  "generatedAt": "2026-11-23T23:49:27",
-  "certificates": []
+  "generatedAt": "2026-11-23T23:50:28",
+  "certificates": [
+    {
+      "name": "2025昇腾优秀开发者",
+      "file": "2025昇腾优秀开发者.png",
+      "src": "content/certificates/2025昇腾优秀开发者.png",
+      "ext": "png"
+    },
+    {
+      "name": "2026HCDG核心贡献者",
+      "file": "2026HCDG核心贡献者.png",
+      "src": "content/certificates/2026HCDG核心贡献者.png",
+      "ext": "png"
+    },
+    {
+      "name": "2026华为云云享专家",
+      "file": "2026华为云云享专家.jpg",
+      "src": "content/certificates/2026华为云云享专家.jpg",
+      "ext": "jpg"
+    },
+    {
+      "name": "AI框架开发者认证（入门级）",
+      "file": "AI框架开发者认证（入门级）.png",
+      "src": "content/certificates/AI框架开发者认证（入门级）.png",
+      "ext": "png"
+    },
+    {
+      "name": "推理开发者认证（入门级）",
+      "file": "推理开发者认证（入门级）.png",
+      "src": "content/certificates/推理开发者认证（入门级）.png",
+      "ext": "png"
+    },
+    {
+      "name": "算子开发者认证（入门级）",
+      "file": "算子开发者认证（入门级）.png",
+      "src": "content/certificates/算子开发者认证（入门级）.png",
+      "ext": "png"
+    },
+    {
+      "name": "训练开发者认证（入门级）",
+      "file": "训练开发者认证（入门级）.png",
+      "src": "content/certificates/训练开发者认证（入门级）.png",
+      "ext": "png"
+    }
+  ]
 }
