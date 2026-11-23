@@ -67,6 +67,7 @@ jobs:
         with:
           name: github-pages
           path: .
+          include-hidden-files: true
 
       - name: Deploy to GitHub Pages
         id: deployment
