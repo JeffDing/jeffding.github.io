@@ -63,11 +63,12 @@ jobs:
         run: rm -rf .git .github
 
       - name: Upload artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-pages-artifact@v3
         with:
-          name: github-pages
           path: .
-          include-hidden-files: true
+
+      - name: Wait for artifact to be indexed
+        run: sleep 5
 
       - name: Deploy to GitHub Pages
         id: deployment
