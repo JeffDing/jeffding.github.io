@@ -9,6 +9,7 @@
   var MANIFEST_URL = "blog-manifest.json";
   var ABOUT_URL = "content/about.md";
   var WORKS_URL = "content/works.md";
+  var CERT_MANIFEST_URL = "certificates-manifest.json";
   var cache = { manifest: null };
 
   var $ = function (sel, root) {
@@ -417,6 +418,96 @@
       });
   }
 
+  function initCertificates() {
+    var grid = $("#cert-grid");
+    if (!grid) return;
+
+    var lightbox = $("#lightbox");
+    var lbImg = $("#lightbox-img");
+    var lbCap = $("#lightbox-caption");
+    var lbClose = $("#lightbox-close");
+
+    function openLightbox(src, name) {
+      if (!lightbox || !lbImg) return;
+      lbImg.setAttribute("src", src);
+      lbImg.setAttribute("alt", name);
+      if (lbCap) lbCap.textContent = name;
+      lightbox.classList.add("is-open");
+      lightbox.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox() {
+      if (!lightbox) return;
+      lightbox.classList.remove("is-open");
+      lightbox.setAttribute("aria-hidden", "true");
+      if (lbImg) lbImg.setAttribute("src", "");
+      document.body.style.overflow = "";
+    }
+
+    if (lightbox && lbClose) {
+      lbClose.addEventListener("click", closeLightbox);
+      lightbox.addEventListener("click", function (e) {
+        if (e.target === lightbox) closeLightbox();
+      });
+      document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape" && lightbox.classList.contains("is-open")) {
+          closeLightbox();
+        }
+      });
+    }
+
+    if (grid) {
+      grid.addEventListener("click", function (e) {
+        var card = e.target.closest(".cert-card");
+        if (!card) return;
+        openLightbox(card.getAttribute("data-src"), card.getAttribute("data-name"));
+      });
+    }
+
+    fetch(CERT_MANIFEST_URL, { cache: "no-store" })
+      .then(function (res) {
+        if (!res.ok) throw new Error("manifest " + res.status);
+        return res.json();
+      })
+      .then(function (data) {
+        var certs = (data.certificates || []).slice();
+        if (!certs.length) {
+          grid.innerHTML =
+            '<p class="cert-empty">还没有证书。把证书图片放进 <code>content/certificates/</code> 目录并推送，这里会自动平铺展示，名称取自文件名。</p>';
+          return;
+        }
+        grid.innerHTML = certs
+          .map(function (cert) {
+            var name = esc(cert.name);
+            var src = esc(cert.src);
+            return (
+              '<button type="button" class="cert-card" data-src="' +
+              src +
+              '" data-name="' +
+              name +
+              '">' +
+              '<span class="cert-thumb">' +
+              '<img src="' +
+              src +
+              '" alt="' +
+              name +
+              '" loading="lazy" decoding="async">' +
+              "</span>" +
+              '<span class="cert-name">' +
+              name +
+              "</span>" +
+              "</button>"
+            );
+          })
+          .join("");
+      })
+      .catch(function () {
+        grid.innerHTML =
+          '<p class="error-msg">证书索引加载失败。请运行 <code>python3 scripts/build_certificates_manifest.py</code> 重新生成 <code>certificates-manifest.json</code>。</p>';
+      });
+  }
+
   /* ---------- boot ---------- */
 
   document.addEventListener("DOMContentLoaded", function () {
@@ -427,5 +518,6 @@
     else if (page === "blog") initBlog();
     else if (page === "post") initPost();
     else if (page === "works") initWorks();
+    else if (page === "certificates") initCertificates();
   });
 })();
