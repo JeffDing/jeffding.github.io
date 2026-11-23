@@ -14,14 +14,6 @@ SGLang：0.5.21+npu
 
 sgl\_kernel\_npu：2026.9.0
 
-hidevlab镜像：https://quay.io/repository/ascend/sglang
-
-## 软链接Python
-
-```Bash
-ln -sf /usr/local/python3.12.16/bin/python3   /usr/local/bin/python3
-ln -sf /usr/local/python3.12.16/bin/python3.12 /usr/local/bin/python3.12
-```
 
 ## 安装libGL
 
