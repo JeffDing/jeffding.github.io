@@ -21,12 +21,6 @@ sgl\_kernel\_npu：2026.9.0
 yum install -y mesa-libGL libglvnd-glx
 ```
 
-## 安装OpenCV-headless
-
-```Plain Text
-pip install opencv-python-headless
-```
-
 ## 安装Pytorch
 
 ```Plain Text
