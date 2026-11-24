@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-24T00:52:59",
+  "generatedAt": "2026-11-24T00:57:36",
   "certificates": [
     {
       "name": "2025昇腾优秀开发者",
@@ -20,16 +20,34 @@
       "ext": "jpg"
     },
     {
+      "name": "2026昇腾社区优秀贡献奖",
+      "file": "2026昇腾社区优秀贡献奖.jpg",
+      "src": "content/certificates/2026昇腾社区优秀贡献奖.jpg",
+      "ext": "jpg"
+    },
+    {
       "name": "AI框架开发者认证（入门级）",
       "file": "AI框架开发者认证（入门级）.png",
       "src": "content/certificates/AI框架开发者认证（入门级）.png",
       "ext": "png"
     },
     {
+      "name": "MindSpore资深开发者",
+      "file": "MindSpore资深开发者.jpg",
+      "src": "content/certificates/MindSpore资深开发者.jpg",
+      "ext": "jpg"
+    },
+    {
       "name": "推理开发者认证（入门级）",
       "file": "推理开发者认证（入门级）.png",
       "src": "content/certificates/推理开发者认证（入门级）.png",
       "ext": "png"
+    },
+    {
+      "name": "第四届中国软件开源创新大赛三等奖",
+      "file": "第四届中国软件开源创新大赛三等奖.jpg",
+      "src": "content/certificates/第四届中国软件开源创新大赛三等奖.jpg",
+      "ext": "jpg"
     },
     {
       "name": "算子开发者认证（入门级）",
