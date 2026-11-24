@@ -419,8 +419,8 @@
   }
 
   function initCertificates() {
-    var grid = $("#cert-grid");
-    if (!grid) return;
+    var area = $("#cert-area");
+    if (!area) return;
 
     var lightbox = $("#lightbox");
     var lbImg = $("#lightbox-img");
@@ -457,12 +457,48 @@
       });
     }
 
-    if (grid) {
-      grid.addEventListener("click", function (e) {
+    if (area) {
+      area.addEventListener("click", function (e) {
         var card = e.target.closest(".cert-card");
         if (!card) return;
         openLightbox(card.getAttribute("data-src"), card.getAttribute("data-name"));
       });
+    }
+
+    function loadImageMeta(src) {
+      return new Promise(function (resolve) {
+        var img = new Image();
+        img.onload = function () {
+          resolve({ width: img.naturalWidth, height: img.naturalHeight });
+        };
+        img.onerror = function () {
+          resolve(null);
+        };
+        img.src = src;
+      });
+    }
+
+    function renderCertCard(cert) {
+      var name = esc(cert.name);
+      var src = esc(cert.src);
+      return (
+        '<button type="button" class="cert-card" data-src="' +
+        src +
+        '" data-name="' +
+        name +
+        '">' +
+        '<span class="cert-thumb">' +
+        '<img src="' +
+        src +
+        '" alt="' +
+        name +
+        '" loading="lazy" decoding="async">' +
+        "</span>" +
+        '<span class="cert-name">' +
+        name +
+        "</span>" +
+        "</button>"
+      );
     }
 
     fetch(CERT_MANIFEST_URL, { cache: "no-store" })
@@ -473,37 +509,45 @@
       .then(function (data) {
         var certs = (data.certificates || []).slice();
         if (!certs.length) {
-          grid.innerHTML =
+          area.innerHTML =
             '<p class="cert-empty">还没有证书。把证书图片放进 <code>content/certificates/</code> 目录并推送，这里会自动平铺展示，名称取自文件名。</p>';
           return;
         }
-        grid.innerHTML = certs
-          .map(function (cert) {
-            var name = esc(cert.name);
-            var src = esc(cert.src);
-            return (
-              '<button type="button" class="cert-card" data-src="' +
-              src +
-              '" data-name="' +
-              name +
-              '">' +
-              '<span class="cert-thumb">' +
-              '<img src="' +
-              src +
-              '" alt="' +
-              name +
-              '" loading="lazy" decoding="async">' +
-              "</span>" +
-              '<span class="cert-name">' +
-              name +
-              "</span>" +
-              "</button>"
-            );
+        var cards = certs.map(renderCertCard);
+
+        Promise.all(
+          certs.map(function (cert, i) {
+            return loadImageMeta(cert.src).then(function (meta) {
+              return {
+                index: i,
+                landscape: meta ? meta.width >= meta.height : true,
+              };
+            });
           })
-          .join("");
+        )
+          .then(function (items) {
+            var landscape = [],
+              portrait = [];
+            items.forEach(function (item) {
+              (item.landscape ? landscape : portrait).push(cards[item.index]);
+            });
+            area.innerHTML =
+              (landscape.length
+                ? '<div class="cert-grid" id="cert-grid-landscape"></div>'
+                : "") +
+              (portrait.length
+                ? '<div class="cert-grid" id="cert-grid-portrait"></div>'
+                : "");
+            if (landscape.length) {
+              $("#cert-grid-landscape").innerHTML = landscape.join("");
+            }
+            if (portrait.length) {
+              $("#cert-grid-portrait").innerHTML = portrait.join("");
+            }
+          });
       })
       .catch(function () {
-        grid.innerHTML =
+        area.innerHTML =
           '<p class="error-msg">证书索引加载失败。请运行 <code>python3 scripts/build_certificates_manifest.py</code> 重新生成 <code>certificates-manifest.json</code>。</p>';
       });
   }
