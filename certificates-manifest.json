@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-24T01:03:38",
+  "generatedAt": "2026-11-24T01:08:11",
   "certificates": [
     {
       "name": "2025昇腾优秀开发者",
@@ -35,6 +35,12 @@
       "name": "MindSpore资深开发者",
       "file": "MindSpore资深开发者.jpg",
       "src": "content/certificates/MindSpore资深开发者.jpg",
+      "ext": "jpg"
+    },
+    {
+      "name": "书生大模型实战应（沐曦魔乐专场）论文分类微调打榜赛三等奖",
+      "file": "书生大模型实战应（沐曦魔乐专场）论文分类微调打榜赛三等奖.jpg",
+      "src": "content/certificates/书生大模型实战应（沐曦魔乐专场）论文分类微调打榜赛三等奖.jpg",
       "ext": "jpg"
     },
     {
