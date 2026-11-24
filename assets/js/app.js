@@ -468,10 +468,23 @@
     function loadImageMeta(src) {
       return new Promise(function (resolve) {
         var img = new Image();
+        var settled = false;
+        var timer = setTimeout(function () {
+          if (!settled) {
+            settled = true;
+            resolve(null);
+          }
+        }, 8000);
         img.onload = function () {
+          if (settled) return;
+          settled = true;
+          clearTimeout(timer);
           resolve({ width: img.naturalWidth, height: img.naturalHeight });
         };
         img.onerror = function () {
+          if (settled) return;
+          settled = true;
+          clearTimeout(timer);
           resolve(null);
         };
         img.src = src;
