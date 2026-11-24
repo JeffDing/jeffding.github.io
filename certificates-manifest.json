@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-24T01:38:03",
+  "generatedAt": "2026-11-24T01:39:19",
   "certificates": [
     {
       "name": "2025昇腾优秀开发者",
@@ -72,6 +72,12 @@
       "file": "魔乐社区【AI乐构】模型量化活动量化卓越奖.jpg",
       "src": "content/certificates/魔乐社区【AI乐构】模型量化活动量化卓越奖.jpg",
       "ext": "jpg"
+    },
+    {
+      "name": "魔乐社区【AI乐构】模型量化活动量化卓越奖",
+      "file": "魔乐社区【AI乐构】模型量化活动量化卓越奖.png",
+      "src": "content/certificates/魔乐社区【AI乐构】模型量化活动量化卓越奖.png",
+      "ext": "png"
     }
   ]
 }
