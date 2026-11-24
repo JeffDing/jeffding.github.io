@@ -1004,6 +1004,11 @@ button {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
   gap: 1.4rem;
+  margin-bottom: 1.6rem;
+}
+
+.cert-grid:last-child {
+  margin-bottom: 0;
 }
 
 .cert-card {
